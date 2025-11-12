@@ -177,16 +177,15 @@ const CreateTaskDialog = ({ open, onOpenChange, userId }: CreateTaskDialogProps)
           </div>
 
           <div className="space-y-2">
-            <Label>Assign To</Label>
+            <Label>Assign To (Optional)</Label>
             <Select
-              value={formData.assignedTo}
+              value={formData.assignedTo || undefined}
               onValueChange={(value) => setFormData({ ...formData, assignedTo: value })}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select user (optional)" />
+                <SelectValue placeholder="Unassigned - Click to assign" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Unassigned</SelectItem>
                 {users.map((user) => (
                   <SelectItem key={user.id} value={user.id}>
                     {user.full_name || user.email}
