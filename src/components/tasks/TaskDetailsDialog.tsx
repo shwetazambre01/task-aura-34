@@ -63,25 +63,25 @@ const TaskDetailsDialog = ({ open, onOpenChange, task }: TaskDetailsDialogProps)
               </div>
             </div>
 
-            {task.assigned_to && (
+            {task.assigned_to_profile && (
               <div className="flex items-center gap-2">
                 <User className="w-4 h-4 text-muted-foreground" />
                 <div>
                   <p className="text-sm font-medium">Assigned To</p>
                   <p className="text-sm text-muted-foreground">
-                    {task.assigned_to.full_name || task.assigned_to.email}
+                    {task.assigned_to_profile.full_name || task.assigned_to_profile.email}
                   </p>
                 </div>
               </div>
             )}
 
-            {task.created_by && (
+            {task.created_by_profile && (
               <div className="flex items-center gap-2">
                 <User className="w-4 h-4 text-muted-foreground" />
                 <div>
                   <p className="text-sm font-medium">Created By</p>
                   <p className="text-sm text-muted-foreground">
-                    {task.created_by.full_name || task.created_by.email}
+                    {task.created_by_profile.full_name || task.created_by_profile.email}
                   </p>
                 </div>
               </div>

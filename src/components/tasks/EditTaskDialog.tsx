@@ -38,7 +38,7 @@ const EditTaskDialog = ({ open, onOpenChange, task, onUpdate, isAdmin }: EditTas
     description: task.description || "",
     dueDate: new Date(task.due_date),
     priority: task.priority,
-    assignedTo: task.assigned_to || "",
+    assignedTo: task.assigned_to || undefined,
   });
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const EditTaskDialog = ({ open, onOpenChange, task, onUpdate, isAdmin }: EditTas
         description: task.description || "",
         dueDate: new Date(task.due_date),
         priority: task.priority,
-        assignedTo: task.assigned_to || "",
+        assignedTo: task.assigned_to || undefined,
       });
     }
   }, [open, task]);

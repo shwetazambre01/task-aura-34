@@ -36,7 +36,7 @@ const CreateTaskDialog = ({ open, onOpenChange, userId }: CreateTaskDialogProps)
     description: "",
     dueDate: undefined as Date | undefined,
     priority: "medium",
-    assignedTo: "",
+    assignedTo: undefined as string | undefined,
   });
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const CreateTaskDialog = ({ open, onOpenChange, userId }: CreateTaskDialogProps)
         description: "",
         dueDate: undefined,
         priority: "medium",
-        assignedTo: "",
+        assignedTo: undefined,
       });
       onOpenChange(false);
       window.location.reload();

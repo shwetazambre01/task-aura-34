@@ -93,10 +93,10 @@ const TaskCard = ({ task, onUpdate, isAdmin, className }: TaskCardProps) => {
             <Calendar className="w-4 h-4 mr-2" />
             Due: {format(new Date(task.due_date), "MMM dd, yyyy")}
           </div>
-          {task.assigned_to && (
+          {task.assigned_to_profile && (
             <div className="flex items-center text-sm text-muted-foreground">
               <User className="w-4 h-4 mr-2" />
-              {task.assigned_to.full_name || task.assigned_to.email}
+              {task.assigned_to_profile.full_name || task.assigned_to_profile.email}
             </div>
           )}
         </CardContent>

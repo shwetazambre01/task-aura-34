@@ -29,7 +29,7 @@ const TaskList = ({ userId, isAdmin }: TaskListProps) => {
     
     let query = supabase
       .from("tasks")
-      .select("*, assigned_to(full_name, email), created_by(full_name, email)", { count: "exact" });
+      .select("*, assigned_to_profile:assigned_to(full_name, email), created_by_profile:created_by(full_name, email)", { count: "exact" });
 
     if (selectedPriority !== "all") {
       query = query.eq("priority", selectedPriority);
